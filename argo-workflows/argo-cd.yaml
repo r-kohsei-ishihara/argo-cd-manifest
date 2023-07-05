@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-workflows
+spec:
+  destination:
+    namespace: argo
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: argo-workflow
+    repoURL: https://github.com/r-kohsei-ishihara/argo-cd-manifest.git
+    targetRevision: main
+  syncPolicy:
+    automated: {}
