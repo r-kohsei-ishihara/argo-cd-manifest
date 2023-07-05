@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: argo-cd
+spec:
+  destination:
+    name: 'argo-cd'
+    namespace: argo
+  source:
+    path: argo-cd
+    repoURL: 'https://github.com/r-kohsei-ishihara/argo-cd-manifest.git'
+    targetRevision: HEAD
+  sources: []
+  project: default
+  generators:
+    - list:
+        elements:
+          - cluster: app1
+            url: 'https://kubernetes.default.svc'
+          - cluster: app2
+            url: 'https://kubernetes.default.svc'
