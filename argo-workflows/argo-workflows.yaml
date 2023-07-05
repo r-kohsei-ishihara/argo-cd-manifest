@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   project: default
   source:
-    path: argo-workflow
+    path: argo-workflows
     repoURL: https://github.com/r-kohsei-ishihara/argo-cd-manifest.git
     targetRevision: main
   syncPolicy:
